@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Link, withRouter} from "react-router-dom"
 import axios from "axios"
+import { threadId } from 'worker_threads';
 
 
-const ThreadPage = ({match})=>{
+const PostPage = ({match})=>{
   
 
-    let topicId = match.params.topicId
-    const [threads, setThreads] = useState([]);
+    let  = match.params.theadId
+    const [posts, setPosts] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:8080/forum_backend/api/v3/topics/'+ topicId + '/threads').then(response=>{
+        axios.get('http://localhost:8080/forum_backend/api/v3/topics/'+ topicId + '/threads/' + threadId + '/post').then(response=>{
             console.log(response);
             setThreads(response.data)
         })
@@ -18,10 +19,10 @@ const ThreadPage = ({match})=>{
     
     return(
         <ul>
-            {threads.map(thread=>{
+            {posts.map(post=>{
                 return(
                     <li>
-                        <Link to={"/topics/"+topicId+"/threads/"+thread.id}>
+                        <Link to={"/topics/"+topicId+"/threads/"+threadId+"/post"}>
                         {thread.name}
                         </Link>
                     </li>
@@ -32,4 +33,4 @@ const ThreadPage = ({match})=>{
 
 }
 
-export default withRouter(ThreadPage);
+export default withRouter(PostPage);

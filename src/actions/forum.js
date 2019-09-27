@@ -3,7 +3,7 @@ import axios from 'axios';
 export const fetchCategories = () => async dispatch => {
     const res = await axios.get(`http://localhost:8080/forum_backend/api`);
     console.log(res.data)
-    // dispatch({ type: Types.FETCH_CATEGORIES, payload: res.data.categories });
+    dispatch({ type: FETCH_CATEGORIES, payload: res.data.categories });
 
 
 };
@@ -11,7 +11,7 @@ export const fetchCategories = () => async dispatch => {
 const baseState = { categories: [] };
 export default (state = baseState, action) => {
     switch (action.type) {
-        case Types.FETCH_CATEGORIES:
+        case FETCH_CATEGORIES:
             return { ...state, categories: action.payload }
         default:
             return state;
