@@ -18,6 +18,7 @@ const ThreadPage = ({match})=>{
     
     return(
         <ul>
+            <button>create new thread</button>
             {threads.map(thread=>{
                 return(
                     <li>
