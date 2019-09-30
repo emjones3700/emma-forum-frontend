@@ -5,8 +5,9 @@ import './App.css';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import TopicPage from "./pages/TopicPage";
-import ThreadPage from "./pages/ThreadPage"
+import ThreadListPage from "./pages/ThreadListPage"
 import LoginPage from "./pages/LoginPage";
+import ThreadPage from './pages/ThreadPage';
 
 
 
@@ -20,9 +21,9 @@ const App = ()=> {
       <BrowserRouter>
         <Switch>
             <Route exact path='/' component={LoginPage} />
-            <Route exact path="/topics/:topicId/threads" component={ThreadPage}/>
+            <Route exact path="/topics/:topicId/threads" component={ThreadListPage}/>
+            <Route exact path="/topics/:topicId/threads/:id" component={ThreadPage}/>
             <Route exact path='/topics' component={TopicPage} />
-
         </Switch>
         </BrowserRouter>
        
