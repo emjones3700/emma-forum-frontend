@@ -18,7 +18,7 @@ const TopicPage = ()=>{
             {topics.map(topic=>{
                 return(
                     <li>
-                        <Link to={"/topics/"+topic.id+"/threads"}>
+                        <Link to={"/topics/"+topic.id+"/threads"} className="link">
                         {topic.name}
                         </Link>
                     </li>

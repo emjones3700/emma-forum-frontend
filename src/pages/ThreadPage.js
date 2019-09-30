@@ -22,7 +22,7 @@ const ThreadPage = ({match})=>{
             {threads.map(thread=>{
                 return(
                     <li>
-                        <Link to={"/topics/"+topicId+"/threads/"+thread.id}>
+                        <Link to={"/topics/"+topicId+"/threads/"+thread.id} className="link">
                         {thread.name}
                         </Link>
                     </li>

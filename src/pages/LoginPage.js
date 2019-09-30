@@ -4,7 +4,7 @@ import React from 'react';
 const LoginPage = ({match})=>{
 return(
 <div class="login">
-  
+    Welcome Back!
     <div class="username">
     <label>Email </label>
     <input type="text" name="username"/>
@@ -17,7 +17,7 @@ return(
 </div>
 
 <button class="login-button"> 
-    login
+    LOGIN
 </button>
 
     Don't have an account? Sign up.
