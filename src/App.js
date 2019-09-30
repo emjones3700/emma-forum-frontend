@@ -8,6 +8,7 @@ import TopicPage from "./pages/TopicPage";
 import ThreadListPage from "./pages/ThreadListPage"
 import LoginPage from "./pages/LoginPage";
 import ThreadPage from './pages/ThreadPage';
+import SignUpPage from './pages/SignUpPage';
 
 
 
@@ -21,6 +22,7 @@ const App = ()=> {
       <BrowserRouter>
         <Switch>
             <Route exact path='/' component={LoginPage} />
+            <Route exact path='/signup' component={<SignUpPage message="hi" />} />
             <Route exact path="/topics/:topicId/threads" component={ThreadListPage}/>
             <Route exact path="/topics/:topicId/threads/:id" component={ThreadPage}/>
             <Route exact path='/topics' component={TopicPage} />

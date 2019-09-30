@@ -107,7 +107,7 @@ body{
 }
 .username{
     padding-top: 5%;
-    padding-left: 3%;
+    padding-left: 6%;
     padding-right: 8%;
     flex-direction: row;
     justify-content: space-between;
@@ -121,7 +121,7 @@ body{
 }
 
 .login-button{
-    /* background-color: red !important; */
+    
     border-radius: 10px;
     outline:none;
     margin-top: 5%;
@@ -132,7 +132,7 @@ body{
     height:8%;
     background: #09d3ac;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
+    
     cursor: pointer;
 }
 

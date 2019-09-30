@@ -6,28 +6,27 @@ import axios from "axios"
 const ThreadPage = ({match})=>{
   
 
-    let topicId = match.params.topicId
-    const [threads, setThreads] = useState([]);
+    let threadId = match.params.id
+    const [posts, setPosts] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:8080/forum_backend/api/v3/topics/'+ topicId + '/threads').then(response=>{
+        axios.get('http://localhost:8080/forum_backend/api/v3/thread/'+ threadId).then(response=>{
             console.log(response);
-            setThreads(response.data)
+            setPosts(response.data.posts)
         })
         
     },[])
     
     return(
         <ul>
-            <button>create new thread</button>
-            {threads.map(thread=>{
+    
+            {posts.map(post=>{
                 return(
                     <li>
-                        <Link to={"/topics/"+topicId+"/threads/"+thread.id} className="link">
-                        {thread.name}
-                        </Link>
+                        {post.text}
                     </li>
                 )
             })}
+
         </ul>
     )
 
