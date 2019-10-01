@@ -5,13 +5,14 @@ import axios from "axios"
 
 const ThreadListPage = ({match})=>{
   
-
+    let user=match.params.userName;
     let topicId = match.params.topicId
     const [threads, setThreads] = useState([]);
     useEffect(()=>{
-        axios.post('http://localhost:8080/forum_backend/api/v3/login').then(response=>{
+        axios.get('http://localhost:8080/forum_backend/api/v3/topics/' + topicId + '/threads').then(response=>{
             console.log(response);
             setThreads(response.data)
+            console.log(user);
         })
         
     },[])

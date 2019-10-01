@@ -6,12 +6,15 @@ const LoginPage = ({match})=>{
 
     const [userName, setUserName] = useState("")
     const [password,setPassword] = useState("")
-
+    // const [sessionId, setSessionId] = useState();
     let newUser= (e)=> {
-    e.preventDefault();
+        e.preventDefault();
        alert(userName+" "+password);
-       axios.post('http://localhost:8080/forum_backend/api/v3/login', {username:userName,password:password}).then((response)=>{
-            console.log(response.data.sessionId)
+       axios.post('http://localhost:8080/forum_backend/api/v3/login', {email:userName,password:password}).then((response)=>{
+            console.log(response.data.sessionID)
+          
+           
+            window.location="/topics"
 
        },(error)=>{
             console.log("yeah idk")
@@ -35,7 +38,7 @@ return(
 
 <div class="password">
   <label>Password </label>
-    <input value={password} onChange={e=>setPassword(e.target.value)} type="password" name="username"/>
+    <input value={password} onChange={e=>setPassword(e.target.value)} type="password" name="password"/>
 </div>
 
 
@@ -53,4 +56,4 @@ return(
 
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);

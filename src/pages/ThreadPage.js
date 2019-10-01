@@ -5,8 +5,8 @@ import axios from "axios"
 
 const ThreadPage = ({match})=>{
   
-
-    let threadId = match.params.id
+    
+    let threadId = match.params.id;
     const [posts, setPosts] = useState([]);
     useEffect(()=>{
         axios.get('http://localhost:8080/forum_backend/api/v3/thread/'+ threadId).then(response=>{

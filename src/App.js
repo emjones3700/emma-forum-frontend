@@ -18,11 +18,10 @@ const App = ()=> {
     <div className="App">
       <header className="App-header">
       <Header/>
-      
       <BrowserRouter>
         <Switch>
             <Route exact path='/' component={LoginPage} />
-            <Route exact path='/signup' component={<SignUpPage message="hi" />} />
+            <Route exact path='/signup' component={SignUpPage} />
             <Route exact path="/topics/:topicId/threads" component={ThreadListPage}/>
             <Route exact path="/topics/:topicId/threads/:id" component={ThreadPage}/>
             <Route exact path='/topics' component={TopicPage} />
