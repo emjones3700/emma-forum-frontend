@@ -12,7 +12,10 @@ const SignUpPage = () =>{
     
     alert(userName+" "+password);
     axios.post('http://localhost:8080/forum_backend/api/v3/users', {email:userName,password:password}).then((response)=>{
-       
+        localStorage.setItem("sessionId", response.data.sessionID);
+        localStorage.setItem("sessionKey", response.data.sessionKey);
+           
+        window.location="/topics"
 
     },(error)=>{
          console.log("bad")
@@ -37,7 +40,7 @@ return(
 </div>
 
 
-<button type="submit" class="login-button" value="login">SIGN UP</button> 
+<button type="submit" class="button" value="login">SIGN UP</button> 
 
 
 </form>

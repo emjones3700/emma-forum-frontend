@@ -9,7 +9,8 @@ import ThreadListPage from "./pages/ThreadListPage"
 import LoginPage from "./pages/LoginPage";
 import ThreadPage from './pages/ThreadPage';
 import SignUpPage from './pages/SignUpPage';
-
+import MakePost from './pages/MakePost';
+import MakeThread from './pages/MakeThread';
 
 
 const App = ()=> {
@@ -20,11 +21,14 @@ const App = ()=> {
       <Header/>
       <BrowserRouter>
         <Switch>
+            <Route exact path='/topics/:topicId/makethread' component={MakeThread} />
             <Route exact path='/' component={LoginPage} />
             <Route exact path='/signup' component={SignUpPage} />
-            <Route exact path="/topics/:topicId/threads" component={ThreadListPage}/>
+            <Route exact path="/topics/:topicId/threads/" component={ThreadListPage}/>
             <Route exact path="/topics/:topicId/threads/:id" component={ThreadPage}/>
             <Route exact path='/topics' component={TopicPage} />
+            <Route exact path='/topics/:topicId/threads/:id/makepost' component={MakePost} />
+            
         </Switch>
         </BrowserRouter>
        

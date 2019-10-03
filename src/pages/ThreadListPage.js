@@ -6,8 +6,9 @@ import axios from "axios"
 const ThreadListPage = ({match})=>{
   
     let user=match.params.userName;
-    let topicId = match.params.topicId
+    let topicId = match.params.topicId;
     const [threads, setThreads] = useState([]);
+    
     useEffect(()=>{
         axios.get('http://localhost:8080/forum_backend/api/v3/topics/' + topicId + '/threads').then(response=>{
             console.log(response);
@@ -16,10 +17,12 @@ const ThreadListPage = ({match})=>{
         })
         
     },[])
+
+
     
     return(
         <ul>
-            <button>create new thread</button>
+            <button className="button" onClick={(e)=>window.location='/topics/' + topicId + '/makethread'}>create new thread</button>
             {threads.map(thread=>{
                 return(
                     <li>

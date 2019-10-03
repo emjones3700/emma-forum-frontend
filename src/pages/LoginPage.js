@@ -12,8 +12,9 @@ const LoginPage = ({match})=>{
        alert(userName+" "+password);
        axios.post('http://localhost:8080/forum_backend/api/v3/login', {email:userName,password:password}).then((response)=>{
             console.log(response.data.sessionID)
-          
-           
+            localStorage.setItem("sessionId", response.data.sessionID);
+            localStorage.setItem("sessionKey", response.data.sessionKey);
+        
             window.location="/topics"
 
        },(error)=>{
@@ -42,7 +43,7 @@ return(
 </div>
 
 
-<button type="submit" class="login-button" value="login">LOGIN</button> 
+<button type="submit" class="button" value="login">LOGIN</button> 
 
 
     Don't have an account? 

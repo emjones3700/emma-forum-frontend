@@ -28,7 +28,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans';
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -120,7 +120,7 @@ body{
     justify-content: space-between;
 }
 
-.login-button{
+.button{
     
     border-radius: 10px;
     outline:none;
@@ -128,12 +128,40 @@ body{
     margin-bottom: 5%;
     padding-top: 1%;
     color:white;
-    width: 17%;
-    height:8%;
+    font-size: 15px;
     background: #09d3ac;
     font-family: 'Josefin Sans', sans-serif;
     
     cursor: pointer;
+}
+
+.post{
+  size: 800;
+}
+.chat-thread {
+  margin: 24px auto 0 auto;
+  padding-top: 1%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+ 
+  align-content: center;
+  justify-content: center;
+}
+
+.chat-thread li {
+  position: relative;
+  clear: both;
+  display: inline-block;
+  padding: 5px;
+  margin: 0 0 20px 0;
+  font: 16px/20px 'Noto Sans', sans-serif;
+  border-radius: 10px;
+  border: solid 5px #09d3ac;
+  color: #1f2025;
+  background-color:white;
 }
 
 
