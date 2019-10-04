@@ -138,6 +138,9 @@ body{
 .post{
   size: 800;
 }
+.tiny{
+  font-size: 11px;
+}
 .chat-thread {
   margin: 24px auto 0 auto;
   padding-top: 1%;

@@ -21,18 +21,20 @@ const ThreadPage = ({match})=>{
 
     
     return(
+        
         <ul className="chat-thread">
-            
+             <button className="button" onClick={(e)=>window.location='/topics'}>back to topics</button>
+            <button className="button" onClick={(e)=>window.location='/topics/' + topicId + '/threads/' + threadId + '/makepost'}>post to this thread</button>
             {posts.map(post=>{
                 return(
                     
                     <li>
                         {post.text}<br></br>
-                        {post.voteTotal} votes
+                        <div className="tiny"> user {post.user_id} | {post.voteTotal} votes</div>
                     </li>
                 )
             })}
-            <button className="button" onClick={(e)=>window.location='/topics/' + topicId + '/threads/' + threadId + '/makepost'}>post to this thread</button>
+            
 
         </ul>
     )

@@ -22,6 +22,7 @@ const ThreadListPage = ({match})=>{
     
     return(
         <ul>
+            <button className="button" onClick={(e)=>window.location='/topics'}>back to topics</button> <br></br>
             <button className="button" onClick={(e)=>window.location='/topics/' + topicId + '/makethread'}>create new thread</button>
             {threads.map(thread=>{
                 return(
